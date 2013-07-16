@@ -12,7 +12,7 @@ function start(route, handle) {
   http.createServer(function(request,response) {
     var pathname = url.parse(request.url).pathname;
     console.log("Request received for"+ pathname + " received." ); 
-    route(handle, pathname, response, postData);
+    route(handle, pathname, response, request);
   }).listen(port);
   console.log("Server has started");
 }
