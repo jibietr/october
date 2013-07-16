@@ -47,10 +47,6 @@ function show(response, postData){
       response.end();
     }
   });
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write("You have sent the text:" + 
-   querystring.parse(postData).text);
-  response.end();
  }
 
 
