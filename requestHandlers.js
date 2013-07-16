@@ -30,7 +30,7 @@ function upload(response, request){
   console.log("Request handler 'upload' was called.");
   var form = new formidable.IncomingForm();
   console.log("about to parse");
-  /*form.parse(request, function(error, fields, files) {
+  form.parse(request, function(error, fields, files) {
     console.log("parsing done");
     
     fs.rename(files.upload.path, "tmp/test.png", function(error){
@@ -42,7 +42,7 @@ function upload(response, request){
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.write("received image:<br/>");
   response.write("<img src='/show' />");
-  response.end(); });*/
+  response.end(); });
  }
 
 
