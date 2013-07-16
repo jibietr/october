@@ -3,7 +3,7 @@ function start() {
   console.log("Request handler 'starter' was called.");  
   function sleep(milliSeconds) {
     var startTime = new Date().getTime();
-    while (new Date().getTime() < starTime + milliSeconds); 
+    while (new Date().getTime() < startTime + milliSeconds); 
   }
   
   sleep(10000);
