@@ -2,6 +2,7 @@
 
 var exec = require("child_process").exec;
 var querystring = require("querystring");
+var fs = require("fs");
 
 function start(response) {
   console.log("Request handler 'starter' was called.");  
