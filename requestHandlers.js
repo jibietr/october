@@ -5,21 +5,21 @@ var exec = require("child_process").exec;
 function start(response) {
   console.log("Request handler 'starter' was called.");  
   
-  //function sleep(milliSeconds) {
-  //  var startTime = new Date().getTime();
-  //  while (new Date().getTime() < startTime + milliSeconds); 
-  //}
-  //sleep(10000);
+  var body = '<html>'+
+   '<head>' +
+   '<meta http-equiv="Content-Type" content="text/html; ' +
+   'charset=UTF-8" />' +
+   '</head>' +
+   '<body>'+
+   '<form action="/upload" method="post">' +
+   '<textarea name="text" rows="20" cols="60"></textarea>' +
+   '</form>' +
+   '</body>' +
+   '</html>';
 
-  var content = "empty";
-  
-  exec("ls -lah", function (error, stdout, stderr){
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write(stdout);
-    response.end();
-  });  
-
-  return content;
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write(body);
+  response.end();
 }
 
 function upload(response){
