@@ -2,7 +2,7 @@
 var exec = require("child_process").exec;
 
 
-function start() {
+function start(response) {
   console.log("Request handler 'starter' was called.");  
   
   //function sleep(milliSeconds) {
@@ -22,7 +22,7 @@ function start() {
   return content;
 }
 
-function upload(){
+function upload(response){
   console.log("Request handler 'upload' was called.");  
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.write("Hello upload");
