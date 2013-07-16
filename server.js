@@ -21,7 +21,7 @@ function start(route, handle) {
     });
     
     request.addListener("end", function(){
-      route(handle, pathname, response);
+      route(handle, pathname, response, postData);
     });
 
   }).listen(port);
