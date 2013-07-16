@@ -14,7 +14,9 @@ function start() {
   var content = "empty";
   
   exec("ls -lah", function (error, stdout, stderr){
-    content = stdout;
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write(stdout);
+    response.end();
   });  
 
   return content;
@@ -22,8 +24,10 @@ function start() {
 
 function upload(){
   console.log("Request handler 'upload' was called.");  
-  return "Hello Upload";
-}
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.write("Hello upload");
+  response.end();
+ }
 
 exports.start = start;
 exports.upload = upload;
